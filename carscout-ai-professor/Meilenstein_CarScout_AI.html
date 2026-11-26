@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head><meta content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; font-src 'none'; media-src 'none'; connect-src 'none'; object-src 'none'; frame-src 'none'; frame-ancestors 'none'; form-action 'none'; base-uri 'none'" http-equiv="Content-Security-Policy"/><meta content="no-referrer" name="referrer"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>CarScout AI – Projekt-Timeline</title>
+<style>
+:root{
+  --bg:#071225;--bg2:#0a1d3b;--card:#102a51;--card2:#143766;--line:#2b6cb0;
+  --accent:#55a7ff;--accent2:#8ec5ff;--text:#eef6ff;--muted:#a9bfd8;--ok:#4fd1c5;
+  --warn:#f6c453;--risk:#ff7b7b;--border:rgba(142,197,255,.18);--shadow:0 18px 60px rgba(0,0,0,.28)
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+radial-gradient(circle at 85% -10%,rgba(65,135,255,.26),transparent 30%),linear-gradient(180deg,#08162b 0%,#06101f 100%);color:var(--text);line-height:1.6}
+a{color:inherit}.wrap{width:min(1180px,calc(100% - 32px));margin:auto}
+.hero{padding:72px 0 44px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,rgba(20,55,102,.74),rgba(7,18,37,.35))}
+.brand{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2);font-weight:800}
+h1{font-size:clamp(38px,6vw,72px);line-height:1.02;margin:12px 0 18px;max-width:930px}.lead{font-size:clamp(18px,2.2vw,24px);color:#c9dcf0;max-width:900px;margin:0}
+.hero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:32px}.metric{padding:16px 18px;border:1px solid var(--border);border-radius:16px;background:rgba(11,31,60,.68)}.metric b{display:block;font-size:22px;color:white}.metric span{font-size:13px;color:var(--muted)}
+.notice{margin:28px 0 0;padding:16px 18px;border-left:4px solid var(--accent);background:rgba(85,167,255,.09);border-radius:0 14px 14px 0;color:#d6e8fa}.notice strong{color:white}
+section{padding:48px 0}.section-title{font-size:30px;margin:0 0 12px}.section-intro{color:var(--muted);max-width:840px;margin:0 0 26px}
+.summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.summary-card{background:linear-gradient(180deg,rgba(20,55,102,.88),rgba(12,35,68,.88));border:1px solid var(--border);padding:22px;border-radius:18px;box-shadow:var(--shadow)}.summary-card h3{margin:0 0 8px;font-size:18px}.summary-card p{margin:0;color:#c0d2e5}
+.timeline{position:relative;margin-top:22px}.timeline:before{content:"";position:absolute;left:19px;top:0;bottom:0;width:2px;background:linear-gradient(var(--accent),rgba(85,167,255,.08))}.phase{position:relative;padding:0 0 28px 58px}.dot{position:absolute;left:9px;top:8px;width:22px;height:22px;border-radius:50%;background:#0b2344;border:5px solid var(--accent);box-shadow:0 0 0 6px rgba(85,167,255,.08)}
+.phase-card{border:1px solid var(--border);background:linear-gradient(145deg,rgba(18,50,94,.94),rgba(9,28,55,.94));border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+.phase-top{display:flex;gap:12px;align-items:flex-start;justify-content:space-between}.phase-meta{font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--accent2)}.phase h3{font-size:24px;line-height:1.2;margin:5px 0 8px}.phase p{color:#c5d7e8;margin:0 0 14px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.chip{font-size:12px;padding:6px 10px;border:1px solid rgba(142,197,255,.24);border-radius:999px;background:rgba(85,167,255,.08);color:#d9ecff}.chip.ok{border-color:rgba(79,209,197,.35);background:rgba(79,209,197,.09);color:#baf4ed}.chip.warn{border-color:rgba(246,196,83,.35);background:rgba(246,196,83,.08);color:#ffe4a0}
+.btn{appearance:none;border:1px solid rgba(142,197,255,.3);background:#123a70;color:white;padding:10px 14px;border-radius:12px;font-weight:750;cursor:pointer}.btn:hover{background:#174985}.prompt{display:none;margin-top:14px;padding:16px;border:1px dashed rgba(142,197,255,.26);border-radius:14px;background:rgba(4,16,33,.52)}.prompt.open{display:block}.prompt h4{margin:0 0 8px;color:#9dccff}.prompt pre{margin:0;white-space:pre-wrap;font:inherit;color:#d9e9f8}
+.turning{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.turn{border:1px solid var(--border);border-radius:18px;padding:20px;background:rgba(14,39,74,.78)}.turn .n{font-size:12px;color:var(--accent2);font-weight:800;text-transform:uppercase}.turn h3{margin:6px 0 8px;font-size:20px}.turn p{margin:0;color:#bdd0e2}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.problem{border:1px solid var(--border);border-radius:18px;padding:20px;background:#0d274b}.problem strong{color:white}.problem p{color:#c0d2e4;margin:7px 0 0}.arrow{color:var(--accent);font-weight:900;margin:0 7px}
+.final{background:linear-gradient(145deg,#123b73,#0a2345);border:1px solid rgba(85,167,255,.35);border-radius:24px;padding:28px;box-shadow:var(--shadow)}.final h3{font-size:28px;margin:0 0 12px}.final-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.final-item{border:1px solid var(--border);background:rgba(4,16,33,.3);padding:14px 16px;border-radius:14px}.final-item b{display:block;color:white}.final-item span{font-size:14px;color:#bcd0e3}
+.footer{padding:30px 0 48px;color:#89a6c1;font-size:13px;border-top:1px solid var(--border)}
+@media(max-width:850px){.hero-grid,.turning{grid-template-columns:1fr 1fr}.summary-grid,.problem-grid,.final-grid{grid-template-columns:1fr}.phase{padding-left:48px}.timeline:before{left:14px}.dot{left:4px}.phase-top{display:block}}
+@media(max-width:560px){.hero-grid,.turning{grid-template-columns:1fr}.wrap{width:min(100% - 22px,1180px)}.hero{padding-top:50px}.phase-card{padding:18px}.phase{padding-left:40px}.timeline:before{left:10px}.dot{left:0;width:20px;height:20px}}
+
+.prompt-details{margin-top:14px}.prompt-details summary{list-style:none;display:inline-block;border:1px solid rgba(142,197,255,.3);background:#123a70;color:white;padding:10px 14px;border-radius:12px;font-weight:750;cursor:pointer}.prompt-details summary::-webkit-details-marker{display:none}.prompt-details[open] summary{background:#174985}.prompt-details .prompt{display:block}.security-card{margin-top:18px;padding:14px 16px;border:1px solid rgba(79,209,197,.3);border-radius:14px;background:rgba(79,209,197,.07);color:#c9f5ef}.security-card b{color:#eaffff}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+<div class="brand">CarScout AI · Projektverlauf</div>
+<h1>Vom ersten Agenten-Gerüst zur präsentationsreifen Händler-Demo</h1>
+<p class="lead">Eine vereinfachte, chronologische Übersicht der tatsächlichen Entwicklung von CarScout AI – mit den wichtigsten Entscheidungen, Problemen, Lösungen und aufklappbaren Arbeitsaufträgen.</p>
+<div class="hero-grid">
+<div class="metric"><b>8</b><span>finale Demo-Ankaufangebote</span></div>
+<div class="metric"><b>188</b><span>automatisierte Tests im finalen Stand</span></div>
+<div class="metric"><b>GPT-6 Luna</b><span>Live-KI über lokalen Codex App Server</span></div>
+<div class="metric"><b>100 % Demo</b><span>keine kostenpflichtige Live-Datenquelle nötig</span></div>
+</div>
+<div class="notice"><strong>Datenschutz / Weitergabe:</strong> Diese Weitergabeversion enthält keine Zugangsdaten, geheimen Schlüssel oder internen Netzwerkdetails. Interne Systempfade wurden neutralisiert.</div><div class="security-card"><b>Sichere Weitergabe:</b> Diese HTML-Datei arbeitet vollständig offline, lädt keine externen Ressourcen, sendet keine Daten und enthält keine Formulare oder Tracking-Skripte.</div>
+</div></header>
+<section><div class="wrap">
+<h2 class="section-title">Ausgangslage</h2>
+<p class="section-intro">CarScout AI entstand als Hochschulprojekt für einen Gebrauchtwagenhändler. Die Kernidee: Ein KI-Agent soll Fahrzeuge strukturiert prüfen, Risiken sichtbar machen, Margen nachvollziehbar berechnen und dem Händler die Entscheidung erleichtern – ohne selbst Kontakt aufzunehmen oder Käufe auszuführen.</p>
+<div class="summary-grid">
+<div class="summary-card"><h3>Geschäftliches Problem</h3><p>Fahrzeughändler haben wenig Zeit, viele Angebote manuell zu prüfen. Interessante Fahrzeuge sollen schneller sichtbar und vergleichbar werden.</p></div>
+<div class="summary-card"><h3>Produktidee</h3><p>Ein blaues Händler-Dashboard mit Fahrzeugkarten, KI-Analyse, Risikohinweisen, Händler-Passung und deterministischer Margenberechnung.</p></div>
+<div class="summary-card"><h3>Sicherheitsprinzip</h3><p>Der Agent darf analysieren und empfehlen. Kontaktaufnahme, Gebote und Käufe bleiben beim Menschen.</p></div>
+<div class="summary-card"><h3>Finale Projektentscheidung</h3><p>Für die Hochschulpräsentation reicht eine glaubwürdige Demo mit synthetischen Gebrauchtwagen. Dadurch entfallen Kosten und rechtliche Hürden externer Fahrzeugfeeds.</p></div>
+</div>
+</div></section>
+<section><div class="wrap">
+<h2 class="section-title">Chronologische Timeline</h2>
+<p class="section-intro">Die Phasen sind bewusst verständlich formuliert. „Auftrag anzeigen“ zeigt jeweils den vereinfachten Kern des damaligen Entwicklungsauftrags.</p>
+<div class="timeline">
+<article class="phase"><span class="dot"></span><div class="phase-card">
+<div class="phase-meta">Phase 1 · Agenten-Grundlage</div><h3>Trinity-Architektur und Regeln</h3>
+<p>Zuerst wurde das Agentengerüst definiert: Rolle, Workflow, Ausgabeformat, Datenhaltung und klare Grenzen für Entscheidungen.</p>
+<div class="chips"><span class="chip">manifest / role / workflow</span><span class="chip">strukturiertes Output-Schema</span><span class="chip ok">Human-in-the-loop</span></div>
+<details class="prompt-details"><summary>Auftrag anzeigen</summary><div class="prompt open"><h4>Vereinfachter Auftrag</h4><pre>Baue eine saubere Agenten-Grundlage für CarScout AI: klare Rolle, definierter Workflow, strukturiertes Ergebnisformat, Speicherstruktur und menschliche Freigabe vor geschäftlichen Aktionen.</pre></div></details>
+
+</div></article>
+<article class="phase"><span class="dot"></span><div class="phase-card">
+<div class="phase-meta">Phase 2 · Testdaten und Fahrzeuglogik</div><h3>30 synthetische Fahrzeuge + deterministische Werkzeuge</h3>
+<p>Eine lokale SQLite-Testdatenbank wurde aufgebaut. Suche, Fahrzeugdetails und Margenberechnung wurden als getrennte Werkzeuge umgesetzt.</p>
+<div class="chips"><span class="chip">30 Testfahrzeuge</span><span class="chip">Deutschlandfilter</span><span class="chip ok">deterministische Marge</span></div>
+<details class="prompt-details"><summary>Auftrag anzeigen</summary><div class="prompt open"><h4>Vereinfachter Auftrag</h4><pre>Erstelle realistische synthetische Fahrzeugdaten für Deutschland. Baue Werkzeuge für Fahrzeugsuche, Detailabruf und Margenberechnung. Preise und Margen dürfen nicht vom Sprachmodell erfunden werden.</pre></div></details>
+
+</div></article>
+<article class="phase"><span class="dot"></span><div class="phase-card">
+<div class="phase-meta">Phase 3 · Codex-Anbindung</div><h3>Lokaler Codex App Server und Werkzeugbrücke</h3>
+<p>CarScout wurde mit dem lokalen Codex App Server verbunden. Die drei Fahrzeugwerkzeuge wurden registriert und zunächst offline simuliert.</p>
+<div class="chips"><span class="chip">search_vehicles</span><span class="chip">get_vehicle_details</span><span class="chip">calculate_margin</span><span class="chip ok">70+ Tests</span></div>
+<details class="prompt-details"><summary>Auftrag anzeigen</summary><div class="prompt open"><h4>Vereinfachter Auftrag</h4><pre>Verbinde CarScout mit dem Codex App Server. Registriere nur die definierten Fahrzeugwerkzeuge. Verarbeite Tool-Aufrufe sauber und teste zuerst vollständig offline, bevor ein echter Modell-Turn gestartet wird.</pre></div></details>
+
+</div></article>
+<article class="phase"><span class="dot"></span><div class="phase-card">
+<div class="phase-meta">Phase 4 · Lokale Web-App</div><h3>Das erste Händler-Dashboard entsteht</h3>
+<p>Aus dem technischen Agenten wurde eine lokale Weboberfläche mit Dashboard, Fahrzeugliste, Details, Merkliste und KI-Suche.</p>
+<div class="chips"><span class="chip">lokaler Webserver</span><span class="chip">Darkblue UI</span><span class="chip">Startskript</span><span class="chip ok">Browser-Test</span></div>
+<details class="prompt-details"><summary>Auftrag anzeigen</summary><div class="prompt open"><h4>Vereinfachter Auftrag</h4><pre>Baue eine lokale Händler-Webseite für CarScout AI: Dashboard, Fahrzeugkarten, Suche, Detailansicht, Merkliste und Margenrechner. Design: premium, dunkelblau, klar und für Händler verständlich.</pre></div></details>
+
+</div></article>
+<article class="phase"><span class="dot"></span><div class="phase-card">
+<div class="phase-meta">Phase 5 · Regelbasierte Demo-Suche</div><h3>Freitextsuche ohne echte KI</h3>
+<p>Die Demo-Suche lernte einfache Anfragen wie „VW unter 100.000 km“ zu verstehen und passende synthetische Fahrzeuge zu filtern.</p>
+<div class="chips"><span class="chip">Freitext → Filter</span><span class="chip">Marke / km / Preis</span><span class="chip warn">noch keine echte KI</span></div>
+<details class="prompt-details"><summary>Auftrag anzeigen</summary><div class="prompt open"><h4>Vereinfachter Auftrag</h4><pre>Verbessere die Demo-Suche so, dass natürliche Suchanfragen deterministisch in Filter übersetzt werden. Zeige erkannte Filter und nur passende Testfahrzeuge. Die Margenberechnung darf nicht verändert werden.</pre></div></details>
+
+</div></article>
+<article class="phase"><span class="dot"></span><div class="phase-card">
+<div class="phase-meta">Phase 6 · Echter Live-Modus</div><h3>GPT-6 Luna analysiert über Codex</h3>
+<p>Nach mehreren Sicherheits- und Ereignistests wurde der Live-Pfad aktiviert. Ein Fehler mit zwei gleichzeitig laufenden Serverprozessen wurde behoben.</p>
+<div class="chips"><span class="chip ok">Live-Antwort über Codex</span><span class="chip">Tool-Nutzung</span><span class="chip">Rückfragen</span><span class="chip">87+ Tests</span></div>
+<details class="prompt-details"><summary>Auftrag anzeigen</summary><div class="prompt open"><h4>Vereinfachter Auftrag</h4><pre>Vervollständige den echten Modell-Turn: Thread/Turn-Zuordnung, Ereignisse, Rückfragen, Tool-Aufrufe und Fehlerzustände. Live und Demo müssen strikt getrennt bleiben. Keine stillen Fallbacks.</pre></div></details>
+
+</div></article>
+<article class="phase"><span class="dot"></span><div class="phase-card">
+<div class="phase-meta">Phase 7 · Strukturierte KI-Ergebnisse</div><h3>Von der Textwand zu Fahrzeugkarten</h3>
+<p>Die freie Modellantwort wurde durch validierbare strukturierte Ergebnisse ersetzt. Fahrzeugfakten kommen aus den Tools; die KI interpretiert nur.</p>
+<div class="chips"><span class="chip">strukturierte JSON-Antwort</span><span class="chip">Fahrzeugkarten</span><span class="chip ok">Faktenprüfung</span><span class="chip">97 Tests</span></div>
+<details class="prompt-details"><summary>Auftrag anzeigen</summary><div class="prompt open"><h4>Vereinfachter Auftrag</h4><pre>Zeige Live-Ergebnisse nicht als langen Text, sondern als strukturierte Fahrzeugkarten. Preis, Kilometer, Baujahr und Standort müssen aus den Fahrzeugdaten stammen. Falsche KI-Vergleiche sollen erkannt und verworfen werden.</pre></div></details>
+
+</div></article>
+<article class="phase"><span class="dot"></span><div class="phase-card">
+<div class="phase-meta">Phase 8 · Reale Datenquellen werden untersucht</div><h3>BCA, Arval, Autobid, Copart, VEBEG &amp; Co.</h3>
+<p>Es wurde geprüft, wie echte kaufbare Fahrzeuge legal und technisch eingebunden werden könnten. Das Problem verschob sich von Technik zu Kosten, Zugriffsrechten und Nutzungsbedingungen.</p>
+<div class="chips"><span class="chip">B2B-Auktionen</span><span class="chip">Feeds / CSV / APIs</span><span class="chip warn">Kosten &amp; Freigaben</span><span class="chip">kein mobile.de als Ankaufquelle</span></div>
+<details class="prompt-details"><summary>Auftrag anzeigen</summary><div class="prompt open"><h4>Vereinfachter Auftrag</h4><pre>Finde alternative echte Ankaufquellen für Händler, aber nicht mobile.de. Vergleiche B2B-Plattformen, Händlerauktionen, Flottenrückläufer, APIs, Exporte, Gebühren und rechtliche Grenzen. Keine Schutzmaßnahmen umgehen.</pre></div></details>
+
+</div></article>
+<article class="phase"><span class="dot"></span><div class="phase-card">
+<div class="phase-meta">Phase 9 · Externe Angebote und Startseite</div><h3>Das Produktziel wird geschärft</h3>
+<p>Zwischenzeitlich wurden manuelle externe Angebote, Importpfade und Provider vorbereitet. Dann wurde das Dashboard neu ausgerichtet: Der Händler soll beim Öffnen direkt Ankaufangebote sehen – nicht selbst suchen müssen.</p>
+<div class="chips"><span class="chip">PurchaseOffer-Modell</span><span class="chip">externe Angebotskarten</span><span class="chip ok">Dashboard-Fokus</span><span class="chip">147+ Tests</span></div>
+<details class="prompt-details"><summary>Auftrag anzeigen</summary><div class="prompt open"><h4>Vereinfachter Auftrag</h4><pre>Richte die Startseite komplett auf Ankaufangebote aus. Entferne unnötige KPI-Kacheln und synthetische Testlisten aus dem normalen Händler-Dashboard. Künftig sollen echte externe Angebote direkt dort erscheinen.</pre></div></details>
+
+</div></article>
+<article class="phase"><span class="dot"></span><div class="phase-card">
+<div class="phase-meta">Phase 10 · Burak-Verkaufsprofil</div><h3>CarScout lernt, welche Fahrzeuge zum Händler passen</h3>
+<p>Aus einem lokalen Bestandsimport wurde ein Händlerprofil berechnet: Marken, Modelle, Preisspannen, Kilometer, Alter, Kraftstoff und Getriebe.</p>
+<div class="chips"><span class="chip">DealerSalesProfile</span><span class="chip">Händler-Passung</span><span class="chip">deterministische Statistik</span><span class="chip ok">163 Tests</span></div>
+<details class="prompt-details"><summary>Auftrag anzeigen</summary><div class="prompt open"><h4>Vereinfachter Auftrag</h4><pre>Erstelle aus Buraks eigenem freigegebenen Bestand ein Verkaufsprofil. Berechne Kennzahlen deterministisch und nutze sie nur als zusätzlichen Faktor für die Händler-Passung externer Angebote.</pre></div></details>
+
+</div></article>
+<article class="phase"><span class="dot"></span><div class="phase-card">
+<div class="phase-meta">Wichtiger Wendepunkt · Professor-Freigabe</div><h3>Keine Live-Autos nötig: Demo ist für das Projekt ausreichend</h3>
+<p>Der Professor bestätigte, dass für die Hochschulbewertung eine überzeugende Demo reicht. Damit konnten kostenpflichtige APIs, Partnerverträge und Freigaben bewusst aus dem Projektumfang entfernt werden.</p>
+<div class="chips"><span class="chip ok">Kostenproblem gelöst</span><span class="chip ok">rechtliche Hürde reduziert</span><span class="chip">Fokus auf Präsentation</span></div>
+<details class="prompt-details"><summary>Auftrag anzeigen</summary><div class="prompt open"><h4>Vereinfachter Auftrag</h4><pre>Stelle CarScout auf eine präsentationsreife Demo um. Keine externe Live-Datenquelle ist mehr notwendig. Synthetische Fahrzeuge müssen realistisch aussehen, klar als Demo gekennzeichnet sein und den geplanten späteren Produktnutzen glaubwürdig zeigen.</pre></div></details>
+
+</div></article>
+<article class="phase"><span class="dot"></span><div class="phase-card">
+<div class="phase-meta">Finale Phase · Händler-Demo</div><h3>Einfach, blau, gebrauchtwagen-realistisch und präsentationsreif</h3>
+<p>Die Oberfläche wurde wieder stärker blau und digital gestaltet. Die Fahrzeugkarten wurden radikal vereinfacht: kein Marktwertvergleich, keine Textwände, keine unnötige Marge auf der Startseite. Die Autos wirken wie gepflegte Gebrauchtwagen – die Software wie moderne KI.</p>
+<div class="chips"><span class="chip">8 Demo-Angebote</span><span class="chip">Empfohlen / Prüfen / Höheres Risiko</span><span class="chip">gebrauchtwagen-realistische Bilder</span><span class="chip ok">188 Tests</span></div>
+<details class="prompt-details"><summary>Auftrag anzeigen</summary><div class="prompt open"><h4>Vereinfachter Auftrag</h4><pre>Baue die finale Demo für den Händleralltag: 6–8 realistische synthetische Gebrauchtwagen direkt auf der Startseite. Karten nur mit Bild, Fahrzeug, Baujahr, km, Ort, Preis, Händler-Passung, Risiko/Priorisierung und Details. Ausführliche KI-Analyse und Margenrechner erst in der Detailansicht. Design: modern, elektrisch, blau. Autos: realistisch gebraucht, nicht Hochglanz-Neuwagen.</pre></div></details>
+
+</div></article>
+</div>
+</div></section>
+<section><div class="wrap">
+<h2 class="section-title">Wichtige Wendepunkte</h2>
+<div class="turning">
+<div class="turn"><div class="n">Wendepunkt 01</div><h3>Von Regeln zur echten KI</h3><p>Die Demo-Suche war zuerst regelbasiert. Später wurde der Codex-Live-Modus mit GPT-6 Luna ergänzt.</p></div>
+<div class="turn"><div class="n">Wendepunkt 02</div><h3>Von Text zu UI</h3><p>Freie Modelltexte waren zu unübersichtlich. Strukturierte Daten und Karten machten die Ergebnisse kontrollierbar und verständlich.</p></div>
+<div class="turn"><div class="n">Wendepunkt 03</div><h3>Von Live-Daten zurück zur Demo</h3><p>Externe Fahrzeugdaten waren kosten- und freigabeintensiv. Nach Rücksprache mit dem Professor wurde die Demo bewusst zum finalen Präsentationsziel.</p></div>
+</div>
+</div></section>
+<section><div class="wrap">
+<h2 class="section-title">Probleme &amp; Lösungen</h2>
+<div class="problem-grid">
+<div class="problem"><strong>KI behauptete einen falschen Fahrzeugvergleich.</strong><span class="arrow">→</span><p>Fahrzeugfakten und Vergleiche wurden deterministisch geprüft. Die KI darf interpretieren, aber keine Fahrzeugdaten überschreiben.</p></div>
+<div class="problem"><strong>Live-Modus landete zeitweise im Demo-Pfad.</strong><span class="arrow">→</span><p>Ursache waren parallel laufende Serverprozesse. Portbelegung und Live-/Demo-Antworten wurden eindeutig gemacht.</p></div>
+<div class="problem"><strong>Ergebnisse waren eine lange Textwand.</strong><span class="arrow">→</span><p>Strukturierte Live-Antworten und kompakte Fahrzeugkarten ersetzten Fließtext.</p></div>
+<div class="problem"><strong>Startseite war mit KPIs und Testdaten überladen.</strong><span class="arrow">→</span><p>Das Dashboard wurde auf den Händler-Use-Case reduziert: Ankaufangebote zuerst, technische Demo-Bereiche separat.</p></div>
+<div class="problem"><strong>Echte Fahrzeugquellen kosteten Geld oder brauchten Freigaben.</strong><span class="arrow">→</span><p>Nach Professor-Freigabe wurde bewusst auf eine hochwertige synthetische Demo umgestellt.</p></div>
+<div class="problem"><strong>Fahrzeugbilder wirkten wie Neuwagen-Werbung.</strong><span class="arrow">→</span><p>Die Autos wurden visuell als gepflegte Gebrauchtwagen inszeniert, während die Software ihren modernen Blue-Tech-Look behielt.</p></div>
+</div>
+</div></section>
+<section><div class="wrap">
+<h2 class="section-title">Finaler Stand</h2>
+<div class="final">
+<h3>CarScout AI ist als Hochschul-Demo präsentationsreif.</h3>
+<div class="final-grid">
+<div class="final-item"><b>Startseite</b><span>8 synthetische Gebrauchtwagen erscheinen direkt als Ankaufangebote.</span></div>
+<div class="final-item"><b>Priorisierung</b><span>Empfohlen, Prüfen oder Höheres Risiko – anhand nachvollziehbarer Demo-Fakten.</span></div>
+<div class="final-item"><b>KI-Vergleich</b><span>GPT-6 Luna kann alle acht Angebote vergleichen und eine begründete erste Prüfung empfehlen.</span></div>
+<div class="final-item"><b>Detailansicht</b><span>Ausstattung, Schäden, Prüfpunkte, KI-Analyse, Händler-Passung und Margenrechner.</span></div>
+<div class="final-item"><b>Margenberechnung</b><span>Bleibt deterministisch; das Modell darf keine Marge frei erfinden.</span></div>
+<div class="final-item"><b>Design</b><span>Modernes, elektrisches Blau; realistische Gebrauchtwagen statt Hochglanz-Neuwagen.</span></div>
+<div class="final-item"><b>Datenhinweis</b><span>Demo-System mit synthetischen Fahrzeugdaten – keine Live-Marktdaten.</span></div>
+<div class="final-item"><b>Qualitätssicherung</b><span>188 automatisierte Tests im finalen Entwicklungsstand.</span></div>
+</div>
+</div>
+</div></section>
+<footer class="footer"><div class="wrap">CarScout AI · Projekt-Timeline · bereinigte Weitergabeversion ohne Zugangsdaten oder interne Netzwerkdetails.</div></footer>
+
+</body>
+</html>
